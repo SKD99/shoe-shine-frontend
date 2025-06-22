@@ -13,16 +13,16 @@ const CheckoutPage = () => {
   const params = new URLSearchParams(location?.search || ""); // ✅ fix null issue
   const buyNowId = params.get("buyNowId");
 
-  useEffect(() => {
-    if (buyNowId) {
-      axios.get("https://shoe-shine-app.onrender.com/api/products")
-        .then((res) => {
-          const found = res.data.find((p) => p.id.toString() === buyNowId);
-          if (found) setProduct(found);
-        })
-        .catch((err) => console.error("Product fetch error", err));
-    }
-  }, [buyNowId]);
+ useEffect(() => {
+  if (buyNowId) {
+    axios.get(`https://shoe-shine-app.onrender.com/api/products/${buyNowId}`)
+      .then((res) => {
+        setProduct(res.data);
+      })
+      .catch((err) => console.error("Product fetch error", err));
+  }
+}, [buyNowId]);
+
 
   const items = buyNowId && product ? [product] : cart;
   const total = items.reduce((sum, item) => sum + item.price, 0);
