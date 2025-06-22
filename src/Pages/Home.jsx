@@ -24,7 +24,7 @@ const Home = () => {
         {products.map((product) => (
           <div className="product-card" key={product.id}>
             <img
-              src={`http://localhost:5000/static/${product.image}`}
+              src={`https://shoe-shine-app.onrender.com/static/${product.image}`}
               alt={product.name}
               className="product-image"
             />
