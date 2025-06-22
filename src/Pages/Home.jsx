@@ -40,7 +40,7 @@ const Home = () => {
                 {isWishlisted(product.id) ? <Heart color="red" /> : <HeartOff />}
               </button>
 
-              <button onClick={() => window.location.href = `/checkout?buyNowId=${product.id}`}>
+              <button onClick={() => window.location.href = `https://shoe-shine-app.onrender.com/checkout?buyNowId=${product.id}`}>
                 Buy Now
               </button>
             </div>
