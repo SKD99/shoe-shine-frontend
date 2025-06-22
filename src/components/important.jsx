@@ -1,30 +1,29 @@
-// important.jsx
-const important = () => {
+import React from "react";
+
+const Important = () => {
   return (
     <main className="important container">
       <div className="important-content">
-        <h1>YOUR FEET DESERVE THE BEST</h1>
-        <p>
-          YOUR FEET DESERVE THE BEST AND WE'RE HERE TO HELP YOU WITH OUR
-          SHOES. YOUR FEET DESERVE THE BEST AND WE'RE HERE TO HELP YOU WITH OUR
-          SHOES.
-        </p>
+        <h1>"Shine Every Step — Where Your Walk Begins With Style."</h1>
+        <p>Shoe Shine brings unmatched comfort, unmatched confidence.</p>
         <div className="important-button">
-          <button>Shop Now</button>
-          <button>Category</button>
+<button onClick={() => window.location.href='/category/men'}>Men</button>
+<button onClick={() => window.location.href='/category/women'}>Women</button>
+<button onClick={() => window.location.href='/category/kids'}>Kids</button>
+<button onClick={() => window.location.href='/category/sports'}>Sports</button>
+
         </div>
         <div className="shopping">
           <p>Also Available On</p>
           <div className="brand-icons">
-            <img src="./public/amazon.jpeg" alt="amazon-logo" style={{ width: "80px", height: "auto" }} />
-            <img src="./public/flipkart.png" alt="flipkart-logo"style={{ width: "100px", height: "auto" }} />
+            <img src="/amazon.jpeg" alt="amazon" className="brand-icon" />
+            <img src="/flipkart.png" alt="flipkart" className="brand-icon" />
           </div>
         </div>
       </div>
-      <div className="important-image"></div>
-      <img src="./public/shoe.jpg" alt="shoe" className="shoe-image"style={{ width: "500px", height: "350px" }} />
+      <img src="/shoe.jpg" alt="shoe" className="shoe-image" />
     </main>
   );
 };
 
-export default important;
+export default Important;
